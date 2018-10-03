@@ -1,3 +1,8 @@
+/*
+ADDDDDD NAAAAMMMMMMEEEEEESSSSSSSSSSSSSSSSS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+
 
 package project1;
 
@@ -57,7 +62,7 @@ public class Project1 {
             // if length == 4 lines containing vertices and type consits of four characters: EXAMPE (6, 0) it's length is 4
             if (length == 4) {
 
-                // read number of vertices.. EXAMPLE (6)
+                // read number of vertices.. EXAMPLE: 6
                 char number1 = newLine.charAt(0);
 
                 // Convert it from char to int 
@@ -151,8 +156,8 @@ public class Project1 {
                         input.close();
                     }
 
-                } //WHILE - HAS NEXT
-            }// else if 
+                } //WHILE - Character by character scanner has next
+            }// else if new line
             // we TEST all the possible cases, so the last case we are in NEW EMPTY LINE 
             // so simply REset the graphs and all the values. 
             else {
@@ -270,7 +275,8 @@ public class Project1 {
         adjacent node to every node in the graph. 
         
         So, for example, graph node 0 has linked list nodes 2 and 4. 
-        This method traverses down  0's linked list (2,4) and makes the following comparisons:
+        This method traverses down  0's linked list (2,4) 
+        and makes the following comparisons:
         linked list node 2 with graph node 0 -> not equal 
         linked list node 2 with graph node 1 -> not equal
         linked list node 2 with graph node 2 -> equal:
@@ -278,26 +284,29 @@ public class Project1 {
         save current for loop index to start at index 3 on the next iteration
         set boolean variable to true
         exit for loop 
-        print 1 OR 2's weight
-        set helppointer (which is pointed at 2) to helppointer.next
+        print 1 (IF UNWEIGHTED) OR 2's weight (IF WEIGHTED)
+        traverse the list (set helppointer (which is pointed at 2) to helppointer.next)
         
          (All linked list nodes are inserted in ascending order.
-        so, logically, if graph node 0 has another neighboer besides 2, it will be greater than 2
-        so there is no need to traverse 0's linked list OR loop the graph array from the beginning all over again)
+        so, logically, if graph node 0 has another neighboer besides 2, 
+        it will be greater than 2
+        so there is no need to traverse 0's linked list 
+        OR loop the graph array from the beginning all over again)
      
         
         start at index 3
         compare linked list node 4 with graph node 3 -> not equal 
         compare linked list node 4 with graph node 4 -> equal   
-        save current for loop index to start at index 3 on the next iteration
+        save current for loop index to start at index 5 on the next iteration
         set boolean variable to true
         exit for loop 
-        print 1 OR 2's weight
-        set helppointer (which is pointed at 2) to helppointer.next
+        print 1 (IF UNWEIGHTED) OR 2's weight (IF WEIGHTED)
+        traverse the list (set helppointer (which is pointed at 4) to helppointer.next)
 
         helppointer is null, exit while loop
         check if there are any graph nodes left that were not compared. 
-        In this case, only node 5 was not reached. So we print a zero at the fifth column.
+        In this case, only node 5 was not reached. 
+        So we print a zero at the fifth column.
         
         
          */
@@ -316,12 +325,13 @@ public class Project1 {
 
             LLnode hlpptr = Graph[i].getList().getHead();
 
-            // this boolean variable is used to determine whether the values compared
+            // this boolean variable is used to determine 
+            // whether the values compared
             // are equal or not and will be used for the program to decide what 
             // to print
             boolean equals = false;
 
-// we use this variable (indx) to store the index just after the 
+            // we use this variable (indx) to store the index just after the 
             // last iteration the for loop stopped at.
             int indx = 0;
             while (hlpptr != null) {
@@ -339,12 +349,13 @@ public class Project1 {
                         equals = true;
                         // we save the index we stopped at
                         indx = j + 1;
-                        // and exit the for loop
+                        // and exit the for loop to move on to the next node 
+                        // + to print once only not for the entire length of the array
                         break;
                     } else {
                         System.out.print("\t0");
                     }
-                }
+                } // for loop
                 // if the two numbers are equal, then do one of two things:
                 // print the weight OR print 1
                 if (equals) {
